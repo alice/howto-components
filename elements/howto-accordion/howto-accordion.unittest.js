@@ -68,9 +68,10 @@
       });
     });
 
-    it('should add `role` to panels', function() {
-      this.panels.forEach(panel => {
-        expect(panel.getAttribute('role')).to.equal('region');
+    it('should add `role` to panels', async function() {
+      this.panels.forEach(async (panel) => {
+        let accessiblePanel = await window.getComputedAccessibleNode(this.panels[0]);
+        expect(accessiblePanel.role).to.equal('region');
       });
     });
   });

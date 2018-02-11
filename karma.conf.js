@@ -33,7 +33,6 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome', 'Firefox', 'Safari'],
     singleRun: true,
     concurrency: Infinity,
     customLaunchers: {
@@ -41,6 +40,10 @@ module.exports = function(config) {
           base: 'Chrome',
           flags: ['--no-sandbox'],
       },
+      Chromium_AOM: {
+          base: 'Chromium',
+          flags: ['--enable-blink-features=AccessibilityObjectModel']
+      }
     },
   };
 
