@@ -28,6 +28,7 @@ module.exports = function(config) {
     ],
     preprocessors: {
     },
+    processKillTimeout: 10000000,
     reporters: ['progress'],
     port: 9876,
     colors: true,

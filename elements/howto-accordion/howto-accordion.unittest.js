@@ -69,10 +69,13 @@
     });
 
     it('should add `role` to panels', async function() {
-      this.panels.forEach(async (panel) => {
-        let accessiblePanel = await window.getComputedAccessibleNode(this.panels[0]);
+      for (let i = 0; i < this.panels.length; i++) {
+        let panel = this.panels[i];
+        panel.expanded = true;
+        let accessiblePanel = await window.getComputedAccessibleNode(panel);
         expect(accessiblePanel.role).to.equal('region');
-      });
+
+      }
     });
   });
 })();
